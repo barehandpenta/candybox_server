@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+#main {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.mood {
+    margin-bottom: 15px;
+}
+
+#thVal {
+    width: 40px;
+    text-align: right;
+}
+
+#btnApply {
+    font-size: 14px;
+    font-style: inherit;
+    background-color: whitesmoke;
+}
