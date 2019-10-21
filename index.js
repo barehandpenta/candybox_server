@@ -21,7 +21,12 @@ io.on('connection', socket => {
     io.emit("update", data);
   });
   socket.on("change_thresh", thresh =>{
-    io.emit("new_thresh", thresh)
+    io.emit("new_thresh", thresh);
+  });
+  socket.on("drop_candy", y =>{
+      if(y == 'YES'){
+          io.emit("candy_drop", y);
+      }
   });
 });
 app.get('/', (req,res) => res.render('home.ejs'));
