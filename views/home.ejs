@@ -3,18 +3,44 @@
   <head>
     <title>Client Side</title>
     <script src="socket.io.js"></script>
-    <script src="jquery.js"></script>    
+    <script src="jquery.js"></script>
+    <script src="chart.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
+  <style>
+    body {
+    background-color:black;
+    color: white;
+    }
+    .mood {
+        margin-bottom: 15px;
+    }
+
+    #thVal {
+        width: 40px;
+        text-align: right;
+    }
+    canvas {
+      position: relative;
+      left: 25%;
+      width: 640px !important;
+      height: 360px !important;
+    }
+    #btnApply {
+        font-size: 14px;
+        font-style: inherit;
+        background-color: whitesmoke;
+    }
+  </style>
   <body>
-      <div id="main"><span>Candy Box monitor:</span></div>
-      <div class="mood"><span>Calm: </span> <span id="calm"> 0 </span> <br></div>
+      <canvas id="chartContainer"></canvas>
+      <!-- <div class="mood"><span>Calm: </span> <span id="calm"> 0 </span> <br></div>
       <div class="mood"><span>Angry: </span> <span id="anger"> 0 </span> <br></div>
       <div class="mood"><span>Joy: </span> <span id="joy"> 0 </span> <br></div>
       <div class="mood"><span>Sorrow: </span> <span id="sorrow"> 0 </span> <br></div>
-      <div class="mood"><span>Energy: </span> <span id="energy"> 0 </span> <br></div>  
+      <div class="mood"><span>Energy: </span> <span id="energy"> 0 </span> <br></div> -->
       <div id="threshold"><span>Threshold: </span> <input id="thVal" type="text" value="25"> <button id="btnApply" type="button">Apply</button></div>
-      <div><h1 id="candy_drop_alert" hidden=True> CANDY DROP!!! </h1></div>
+      <div><h1 id="candy_drop_alert" hidden=True> Joyness Overload </h1></div>
   </body>
   <script src="sketch.js"></script>
 </html>

@@ -6,7 +6,7 @@ app.use(express.static('public'));
 
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
-server.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 1234);
 
 moods = {
     "calm": 25,
@@ -17,17 +17,18 @@ moods = {
 }
 
 io.on('connection', socket => {
-  socket.on("moods", data => {
-    io.emit("update", data);
-  });
-  socket.on("change_thresh", thresh =>{
-    io.emit("new_thresh", thresh);
-  });
-  socket.on("drop_candy", y =>{
-      if(y == 'YES'){
-          io.emit("candy_drop", y);
-      }
-  });
+    console.log(socket.id)
+    socket.on("moods", data => {
+        io.emit("update", data);
+    });
+    socket.on("change_thresh", thresh =>{
+        io.emit("new_thresh", thresh);
+    });
+    socket.on("drop_candy", y =>{
+        if(y == 'YES'){
+            io.emit("candy_drop", y);
+        }
+    });
 });
 app.get('/', (req,res) => res.render('home.ejs'));
 
