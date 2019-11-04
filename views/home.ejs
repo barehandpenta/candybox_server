@@ -1,46 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Client Side</title>
-    <script src="socket.io.js"></script>
-    <script src="jquery.js"></script>
-    <script src="chart.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>The Candy Box</title>
+    <script src="lib/socket.io.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/chart.js"></script>
+    <script src="lib/chartjs-plugin-annotation.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
   </head>
-  <style>
-    body {
-    background-color:black;
-    color: white;
-    }
-    .mood {
-        margin-bottom: 15px;
-    }
-
-    #thVal {
-        width: 40px;
-        text-align: right;
-    }
-    canvas {
-      position: relative;
-      left: 25%;
-      width: 640px !important;
-      height: 360px !important;
-    }
-    #btnApply {
-        font-size: 14px;
-        font-style: inherit;
-        background-color: whitesmoke;
-    }
-  </style>
   <body>
-      <canvas id="chartContainer"></canvas>
-      <!-- <div class="mood"><span>Calm: </span> <span id="calm"> 0 </span> <br></div>
-      <div class="mood"><span>Angry: </span> <span id="anger"> 0 </span> <br></div>
-      <div class="mood"><span>Joy: </span> <span id="joy"> 0 </span> <br></div>
-      <div class="mood"><span>Sorrow: </span> <span id="sorrow"> 0 </span> <br></div>
-      <div class="mood"><span>Energy: </span> <span id="energy"> 0 </span> <br></div> -->
-      <div id="threshold"><span>Threshold: </span> <input id="thVal" type="text" value="25"> <button id="btnApply" type="button">Apply</button></div>
-      <div><h1 id="candy_drop_alert" hidden=True> Joyness Overload </h1></div>
+    <canvas id="dashboard"></canvas>
+    <div id=controlPanel>
+      <div id="threshold">
+        <span>Threshold: </span>
+        <input type="range" min="1" max="50" value="25" class="slider" id="thVal">
+        <button id="btnApply" type="button">Apply</button>
+      </div>
+      <div class="candyCounter">
+        <span>Candy Drop:</span>
+        <span id="candyDrop">0</span>
+      </div>
+    </div>
+    <canvas id="monthlyGraph"></canvas>
   </body>
   <script src="sketch.js"></script>
 </html>

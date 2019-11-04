@@ -1,0 +1,40 @@
+body {
+    background-color:black;
+    color: white;
+    }
+    .mood {
+        margin-bottom: 15px;
+    }
+
+    canvas {
+      position: relative;
+      left: 25%;
+      width: 640px !important;
+      height: 360px !important;
+    }
+    #btnApply {
+      font-size: 16px;
+      background-color: whitesmoke;
+    }
+    #thVal {
+      width: 150px;
+      height: 16px;
+    }
+    .candyCounter {
+      flex:2;
+      order:1;
+      font-size: 36px;
+      font-family: 'Titillium Web', sans-serif;
+    }
+    span {
+      font-family: 'Titillium Web', sans-serif;
+    }
+    #controlPanel {
+      display: flex;
+    }
+    #threshold {
+      flex:1;
+      order:2;
+      align-items:baseline;
+      font-weight: bolder;
+    }
